@@ -31,6 +31,6 @@ Pré-requisitos
 
 Exemplo de endpoints:
 
-    [Screenshot 2024-06-11 at 22-05-13 Swagger UI](https://github.com/aJlino82/java-backend-2024.1/assets/53987087/affbf0ee-1a72-4b7f-b163-b416170cf6ab)
+    https://github.com/aJlino82/java-backend-2024.1/assets/53987087/affbf0ee-1a72-4b7f-b163-b416170cf6ab
 
 
