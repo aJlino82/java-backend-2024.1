@@ -1,7 +1,9 @@
 package com.kamikase.web.posbackend.controller;
 
 import com.kamikase.web.posbackend.client.CnpjClient;
+import com.kamikase.web.posbackend.client.EsporteClient;
 import com.kamikase.web.posbackend.model.ApiDTO.CnpjResponseDTO;
+import com.kamikase.web.posbackend.model.ApiDTO.EsporteResponseDTO;
 import com.kamikase.web.posbackend.model.Clube.Clube;
 import com.kamikase.web.posbackend.model.Clube.ClubeDto;
 import com.kamikase.web.posbackend.service.ClubeService;
@@ -17,7 +19,7 @@ import java.util.List;
 public class ClubeController {
 
     private final ClubeService clubeService;
-
+    private final EsporteClient esporteClient;
     private final CnpjClient cnpjClient;
 
     @PostMapping
@@ -59,4 +61,12 @@ public class ClubeController {
     public ResponseEntity<List<Clube>> consultarPorNome(@PathVariable String nome) {
         return ResponseEntity.ok(clubeService.findByNomeOrderByNomeAsc(nome));
     }
+
+    @GetMapping("/esporte/{codigo}")
+    public ResponseEntity<EsporteResponseDTO> consultaEsporte(@PathVariable String codigo) {
+        EsporteResponseDTO responseDTO = esporteClient.consultaEsporte(codigo);
+        System.out.println(responseDTO.nome());
+        return ResponseEntity.ok(responseDTO);
+    }
+
 }

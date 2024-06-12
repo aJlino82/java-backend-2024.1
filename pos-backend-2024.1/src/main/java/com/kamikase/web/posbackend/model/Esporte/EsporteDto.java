@@ -1,4 +1,4 @@
 package com.kamikase.web.posbackend.model.Esporte;
 
-public class EsporteDto {
+public record EsporteDto(String codigo, String nome) {
 }
